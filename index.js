@@ -41,6 +41,8 @@ function createGrid () {
          squares[tail].classList.add('snake');
          currentSnake.push(tail);
          generateApples();
+         score += 10;
+         scoreDisplay.textContent = score;
 
      }
  }
