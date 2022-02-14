@@ -1,12 +1,86 @@
-html,body {
+:root{
+    --button-height: 3rem;
+    --color-text: rgba(0,0,0,.25);
+    --color-text-shadow: rgba(255,255,255,.15);
+    --color-page-bg:#B9B5AA;
+    --color-bg:#899095;
+    --color-bg-light:#969DA3;
+    --color-bg-dark: #7D878F;
+    --color-overlay-light: rgba(255,255,255,.2);
+    --color-overlay-medium: rgba(0,0,0,.1);
+    --color-overlay-dark: rgba(0,0,0,.2);
+    --color-tab-focus: rgba(255,255,255,.15);
+  }
+
+
+body {
     padding: 10px;
     margin: 10px;
+    font-family: 'Press Start 2P', cursive;
+    /* display: flex;
+    justify-content: center; */
+    background-color: #6dbd13;
 }
+
+
+.main-container {
+    width: 350px;
+    height: 600px;
+    min-width: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #0c0c0e;
+    margin: auto;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 3px 5px 19px 9px rgba(255,255,255,0.52) inset;
+    -webkit-box-shadow: 3px 5px 19px 9px rgba(255,255,255,0.52) inset;
+    -moz-box-shadow: 3px 5px 19px 9px rgba(255,255,255,0.52) inset;
+}
+
+.header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.header h1 {
+    padding: 5px;
+}
+
+.header-text {
+    color: #6dbd13;
+    text-shadow: -2px 4px 21px rgba(220,219,77,0.6);
+}
+
+.grid-container {
+    display: flex;
+    justify-content: center;
+    background-color: #fff;
+}
+
+.controls-container {
+    width: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+    /* background-color: #fff; */
+}
+
+.horizontal-arrow-container {
+    display: flex;
+    justify-content:space-around;
+    width: 100%;
+}
+
+
 
 .grid {
     width: 200px;
     height: 200px;
-    border: solid 2px black;
+    border: 5px inset #999595;
     display: flex;
     flex-wrap: wrap;
 }
@@ -24,3 +98,75 @@ html,body {
 .apples {
     background: radial-gradient(red, #01020e);
 }
+
+button {
+    font-family: 'Press Start 2P', cursive !important; 
+    padding: 0;
+    border-style: none;
+    background-color: #fff;
+    
+}
+
+.control-arrow {
+    background-color: #0c0c0e;
+}
+.control-arrow:focus{
+    outline:none;
+    
+  }
+
+.fa-solid {
+    font-size: 3rem;
+    color: var(--color-bg);
+    text-shadow: 1px 1px var(--color-text-shadow);
+    
+}
+
+#start {
+    padding: 1rem;
+}
+
+
+.retro-button{
+    position:relative;
+    appearance:none;
+    box-sizing:border-box;
+    font-size:calc( var(--button-height) / 3 );
+    background: var(--color-bg);
+    height:var(--button-height);
+    min-width:var(--button-height);
+    border-radius:calc( var(--button-height) / 2);
+    border:0;
+    font-weight:800;
+    text-transform:uppercase;
+    color:var(--color-text);
+    text-shadow: 1px 1px var(--color-text-shadow);
+    cursor:pointer;
+    margin:6px 6px;
+    letter-spacing:.1em;
+    transition: all 200ms ease;
+    box-shadow:
+      -1px  -1px 1px var(--color-bg), 
+      0 0 0 4px var(--color-overlay-medium),
+      1px  1px 1px var(--color-bg-dark), 
+      inset .0 .0 .0 var(--color-overlay-dark),    
+      inset .5rem .5rem .25rem var(--color-bg-light);
+  }
+
+  .retro-button::-moz-focus-inner{
+    outline:none;
+    border:none;
+  }
+
+  .retro-button:focus{
+    outline:none;
+  }
+
+  .retro-button:active{
+    box-shadow:
+      inset 1px 1px 1px var(--color-bg),    
+      0 0 0 4px var(--color-overlay-dark), 
+      inset -1px -1px 1px var(--color-bg-light),     
+      inset .5rem .5rem .75rem var(--color-bg-dark), 
+      inset .5rem .5rem .5rem var(--color-bg-light), 
+  }

@@ -1,6 +1,10 @@
 
 const grid = document.querySelector('.grid');
 const startBtn = document.querySelector('#start');
+const upBtn = document.querySelector('#up-arrow');
+const downBtn = document.querySelector('#down-arrow');
+const leftBtn = document.querySelector('#left-arrow');
+const rightBtn = document.querySelector('#right-arrow');
 const scoreDisplay = document.querySelector('#score');
 let squares = [];
 let currentSnake = [2,1,0];
@@ -78,18 +82,26 @@ function generateApples () {
 
 generateApples();
 
+// KEY_BOARD CONTROLS
 
  function control (e) {
-     if (e.keyCode === 39) {                   // 39 is right arrow
+     if (e.keyCode === 39 ) {                   // 39 is right arrow
          direction = 1;
-     } else if (e.keyCode === 37){             // 37 is for the left arrow
+     } else if (e.keyCode === 37 ){             // 37 is for the left arrow
         direction = -1;
-     } else if (e.keyCode === 38){             // 38 is for the up arrow
+     } else if (e.keyCode === 38 ){             // 38 is for the up arrow
         direction = -width;
-     } else if (e.keyCode === 40){             // 40 is for the down arrow
+     } else if (e.keyCode === 40 ){             // 40 is for the down arrow
         direction = +width;
      }
  }
-
  document.addEventListener('keydown', control);
+
+ //SCREEN CONTROLS
+ 
  startBtn.addEventListener('click', startGame);
+ upBtn.addEventListener('click', function() {direction = -width});
+ downBtn.addEventListener('click', function() {direction = +width});
+ leftBtn.addEventListener('click', function() {direction = -1});
+ rightBtn.addEventListener('click', function() {direction = 1});
+ 
