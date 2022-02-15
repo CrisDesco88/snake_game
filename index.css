@@ -12,26 +12,20 @@
     --color-tab-focus: rgba(255,255,255,.15);
   }
 
-
 body {
-    padding: 10px;
-    margin: 10px;
     font-family: 'Press Start 2P', cursive;
-    /* display: flex;
-    justify-content: center; */
-    background-color: #6dbd13;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-image: url('./img/snake-creative-minimalism.jpg');
 }
 
-
-.main-container {
-    width: 350px;
-    height: 600px;
-    min-width: 300px;
+.contenedor {
+    margin: 0 auto;
+    background-color: #0c0c0e;
+    box-sizing: border-box;
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: #0c0c0e;
-    margin: auto;
     padding: 10px;
     border-radius: 10px;
     box-shadow: 3px 5px 19px 9px rgba(255,255,255,0.52) inset;
@@ -43,15 +37,13 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-}
-
-.header h1 {
-    padding: 5px;
+    text-align: center;
 }
 
 .header-text {
     color: #6dbd13;
     text-shadow: -2px 4px 21px rgba(220,219,77,0.6);
+    margin-bottom: 0.5em;
 }
 
 .grid-container {
@@ -59,23 +51,6 @@ body {
     justify-content: center;
     background-color: #fff;
 }
-
-.controls-container {
-    width: 200px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 20px;
-    /* background-color: #fff; */
-}
-
-.horizontal-arrow-container {
-    display: flex;
-    justify-content:space-around;
-    width: 100%;
-}
-
-
 
 .grid {
     width: 200px;
@@ -95,9 +70,41 @@ body {
     background: radial-gradient(#6dbd13, #01020e);
 }
 
-.apples {
-    background: radial-gradient(red, #01020e);
+.apples::before {
+    content: "🍎";
 }
+
+.snake-animation {
+    font-size: 2rem;
+    margin-bottom: 0.5em;
+    margin-top: 0;
+    position: relative;
+    animation-name: slidein;
+    animation-duration: 5s;
+    /* animation-direction: alternate;  */
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out; 
+}
+  
+  @keyframes slidein {
+    0% {
+      right: -100px;
+    }
+    25% {
+      right: -50px;
+    }
+    50% {
+      right: 0px;
+    }
+    75% {
+      right: 50px;
+    }
+  
+    100% {
+     right: 100px;
+   }
+  }
+
 
 button {
     font-family: 'Press Start 2P', cursive !important; 
@@ -107,25 +114,38 @@ button {
     
 }
 
+.controls-container {
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+    /* background-color: #fff; */
+}
+
+.horizontal-arrow-container {
+    display: flex;
+    justify-content:space-around;
+    width: 100%;
+}
+
 .control-arrow {
     background-color: #0c0c0e;
 }
 .control-arrow:focus{
-    outline:none;
-    
-  }
+    outline:none;  
+}
 
 .fa-solid {
     font-size: 3rem;
     color: var(--color-bg);
-    text-shadow: 1px 1px var(--color-text-shadow);
-    
+    text-shadow: 1px 1px var(--color-text-shadow);    
 }
 
 #start {
-    padding: 1rem;
+    padding: 0.75em;
+    font-size: 1rem;
 }
-
 
 .retro-button{
     position:relative;
@@ -169,4 +189,12 @@ button {
       inset -1px -1px 1px var(--color-bg-light),     
       inset .5rem .5rem .75rem var(--color-bg-dark), 
       inset .5rem .5rem .5rem var(--color-bg-light), 
+  }
+
+@media (min-width:320px){
+    .contenedor{
+        width: 100%;
+        max-width: 320px;
+        
+    }
   }
