@@ -81,7 +81,6 @@ body {
     position: relative;
     animation-name: slidein;
     animation-duration: 5s;
-    /* animation-direction: alternate;  */
     animation-iteration-count: infinite;
     animation-timing-function: ease-in-out; 
 }
@@ -110,8 +109,7 @@ button {
     font-family: 'Press Start 2P', cursive !important; 
     padding: 0;
     border-style: none;
-    background-color: #fff;
-    
+    background-color: #fff;   
 }
 
 .controls-container {
@@ -119,8 +117,7 @@ button {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 20px;
-    /* background-color: #fff; */
+    margin: 15px 0px;
 }
 
 .horizontal-arrow-container {
@@ -144,7 +141,7 @@ button {
 
 #start {
     padding: 0.75em;
-    font-size: 1rem;
+    font-size: 0.75rem;
 }
 
 .retro-button{
